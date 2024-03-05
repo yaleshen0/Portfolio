@@ -28,7 +28,7 @@ const greeting = {
     concepts, commits to contribute to the development and delivery of user-friendly products.`
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1JHxIVH3RqPoUYb2lOuvjec6dgPzRowAe/view?usp=sharing", // Set to empty to hide the button
+    "https://docs.google.com/document/d/1uh40OB8NqFYyFSoe-HeGnrAuUXHoVKU_PzRmgIs2Wxw/edit?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
