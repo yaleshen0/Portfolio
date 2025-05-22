@@ -23,12 +23,12 @@ const greeting = {
   username: "Yichao",
   title: "Welcome to Yichao's page",
   subTitle: emoji(
-    `Full Stack Software Developer 🚀 : An adept business-minded software engineer applies architectural best practices to create scalable and reliable systems. A
+    `Full Stack Software Developer 🚀 An adept business-minded software engineer applies architectural best practices to create scalable and reliable systems. A
     collaborative team player, possessing excellent communication skills to articulate complex technical
-    concepts, commits to contribute to the development and delivery of user-friendly products.`
+    concepts`
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1JHxIVH3RqPoUYb2lOuvjec6dgPzRowAe/view?usp=sharing", // Set to empty to hide the button
+    "https://docs.google.com/document/d/1uh40OB8NqFYyFSoe-HeGnrAuUXHoVKU_PzRmgIs2Wxw/edit?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -47,10 +47,10 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "Introduction",
-  subTitle: "FULL STACK DEVELOPER LIKE TO LEARN NEW TECHNOLOGY AND IMPLEMENT IN REAL WORLD",
+  subTitle: "FULL STACK DEVELOPER LIKE TO SOLVE REAL WORLD PROBLEMS",
   skills: [
     emoji(
-      "⚡ Goal oriented: reach my goal with what I have to learn"
+      "⚡ Goal oriented: pick up new technologies to reach my goal"
     ),
     emoji("⚡ Stand on the shoulders of Giants: keep studying world class buiness model and architecture"),
     emoji(
@@ -119,7 +119,11 @@ const educationInfo = {
       schoolName: "Stevens Institute of Technology",
       logo: require("./assets/images/sitLogo.png"),
       subHeader: "Master of Computer Engineering in Data Engineering",
-      duration: "August 2017 - Dec 2018"
+      duration: 
+        [
+          "August 2017 - Dec 2018",
+          "August 2011 - May 2015"
+        ]
     }
   ]
 };
@@ -134,6 +138,10 @@ const techStack = {
       progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
+      Stack: "React",
+      progressPercentage: "80%"
+    },
+    {
       Stack: "JavaScript",
       progressPercentage: "70%"
     },
@@ -141,10 +149,6 @@ const techStack = {
       Stack: "Data Structures and Algorithms",
       progressPercentage: "60%"
     },
-    {
-      Stack: "System Design",
-      progressPercentage: "50%"
-    }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
@@ -155,15 +159,30 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
+      role: "Software Engineer",
+      company: "ValueGlance",
+      companylogo: require("./assets/images/VG.png"),
+      date: "Sept 2024 – Present",
+      descBullets: [
+        `Spearheaded a system-wide architectural refactor applying Object-Oriented Design (OOD) principles, significantly enhancing modularity, readability, and maintainability to reduce future development time and bug occurrences.`,
+        `Implemented robust, serverless cron jobs via AWS Lambda and SQS to automate stock update services, ensuring high availability and consistent data freshness for downstream applications`,
+        `Designed and delivered an end-to-end financial data pipeline: successfully fetched and processed FMP data, computed advanced metrics (Tobin’s Q, ROIC), and managed data persistence with AWS DynamoDB`,
+        `Led a high-performance Backtesting application with a Python backend and a modular React frontend (reusable components) for data visualization`,
+        `Implemented React data visualizations (line/pie charts) within the Backtester, delivering user-friendly insights on portfolio performance and enabling clearer understanding of return trends.`,
+      ]
+    },
+    {
       role: "Full Stack Developer",
       company: "Icahn School of Medicine at Mount Sinai",
       companylogo: require("./assets/images/mountsinaiLogo.png"),
       date: "June 2019 – Ocot 2020",
       descBullets: [
-        "Worked closely with teammates to design and implement real time health indicator API",
-        "Developed a new feature to display heart rate and SpO2 value for COPD program",
-        "Design and development of ArmBike exergaming for COPD rehab program with 20+ enrolled patients",
-        "Designed a front end COVID-19 UI for our dedicated frontline healthcare team"
+        `Built a real-time vital sign monitoring system that allowed patient to track heart rate, SpO2, enabling patient to
+          actively monitor the progress and engage in rehabilitation`,
+        `Migrated legacy C#/VB application to a robust and scalable C#.NET MVC framework with a responsive
+          HTML/CSS/JavaScript(React) interface, improving maintainability and reusability`,
+        `Created an engaging and user-centric Python-based racing game to encourage patient’s participation during ArmBike
+          rehabilitation, improving patient’s user experience`,
       ]
     },
     {
@@ -171,7 +190,12 @@ const workExperiences = {
       company: "University of IOWA",
       companylogo: require("./assets/images/uiLogo.png"),
       date: "June 2018 – Aug 2018",
-      desc: "Gene sequencing analysis using machine learning"
+      descBullets: [
+        `Preprocessed and cleaned up 300 GB raw data to convert from Fast5 to Fastq files and event align gene sequences
+          with BWA, Samtools, and etc`,
+        `Implemented machine learning algorithms such as decision tree and SVM to better separate and interpret from
+          overlapping Gaussian-like distributions`,
+      ]
     },
     {
       role: "Full Stack Developer",
@@ -179,9 +203,12 @@ const workExperiences = {
       // companylogo: require("./assets/images/uvLogo.jpeg"),
       date: "Apr 2016 – Apr 2017",
       descBullets: [
-        "Refactored and developed frontend and backend of new travel agent website",
-        "Debug the database and scaled up the website throughput",
-        "Sped up the website from 43 points to 86 points on Google developer PageSpeed Insights"
+        `Designed, implemented, and refactored legacy travel agency website, resulting in improved maintainability,
+          performance, and user experience`,
+        `Implemented a robust backend using PHP Laravel, a dynamic frontend interface using HTML/CSS/JavaScript(VueJs),
+          and PostgreSQL database`,
+        `Contributed to the adoption of best practices and development workflows, resulting in faster loading speed and larger
+          throughput, supporting higher traffic volumes`,
       ]
     }
   ]

@@ -47,13 +47,17 @@ export default function EducationCard({school}) {
               >
                 {school.subHeader}
               </h5>
-              <p
-                className={`${
-                  isDark ? "dark-mode" : ""
-                } education-text-duration`}
-              >
-                {school.duration}
-              </p>
+              
+                {school.duration.map((item, index) => (
+                  <p
+                    className={`${
+                      isDark ? "dark-mode" : ""
+                    } education-text-duration`}
+                  >
+                    {item}
+                  </p>
+                ))}
+              
               <p className="education-text-desc">{school.desc}</p>
               <div className="education-text-bullets">
                 <ul>
