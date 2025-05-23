@@ -1,0 +1,36 @@
+# This is the name you'll see in the 'Actions' tab on GitHub
+name: Deploy to GitHub Pages
+
+# This specifies when the robot should run this recipe
+on:
+  push:
+    branches:
+      - main # The robot will run this recipe every time you push code to your 'main' branch
+
+# This defines the actual tasks the robot will perform
+jobs:
+  build-and-deploy: # This is just a name for this set of tasks
+    runs-on: ubuntu-latest # The robot will run on a standard Linux computer
+
+    steps: # These are the individual actions the robot takes, in order
+      - name: Checkout 🛎️ # Step 1: Get your project's code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js # Step 2: Prepare the environment with Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use Node.js version 20
+          cache: 'npm' # Speed up future runs by caching npm packages
+
+      - name: Install dependencies 🔧 # Step 3: Run 'npm install' to get all required packages
+        run: npm install
+
+      - name: Run build script 🏗️ # Step 4: Run your project's 'build' command (which creates the 'build' folder)
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀 # Step 5: Use a special tool to push the 'build' folder to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # A special secret token GitHub provides automatically
+          publish_dir: ./build # Tell the tool where your built website files are located
+          publish_branch: gh-pages # Tell the tool to push these files to the 'gh-pages' branch
